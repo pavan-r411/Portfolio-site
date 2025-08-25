@@ -25,12 +25,21 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  // Close menu on nav link click (mobile)
+  // Close menu on nav link click (mobile) and prevent background scroll
   useEffect(() => {
+    // Prevent background scroll
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    // Close menu on nav link click
     if (!menuOpen) return;
     const closeMenu = () => setMenuOpen(false);
     document.querySelectorAll('.nav a').forEach((el) => el.addEventListener('click', closeMenu));
     return () => {
+      document.body.style.overflow = '';
       document.querySelectorAll('.nav a').forEach((el) => el.removeEventListener('click', closeMenu));
     };
   }, [menuOpen]);
