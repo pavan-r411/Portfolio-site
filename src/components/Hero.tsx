@@ -5,10 +5,10 @@ export default function Hero() {
     <section id="home" className="section hero">
       <div className="container">
         <div className="hero-row">
-          <img src="/pavan.jpg" alt="Pavan Kumar Ramesh" className="avatar" />
+          <img src="public/pavan.jpg" alt="Pavan Kumar Ramesh" className="avatar" />
           <div className="hero-content">
             <h1>{profile.name}</h1>
-            <p className="tagline">{profile.tagline}</p>
+            <p className="tagline">{profile.tagline} · {profile.location} </p>
             <p className="contact">
               <a href={`mailto:${profile.email}`}>{profile.email}</a> · {profile.phone} ·{' '}
               <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>

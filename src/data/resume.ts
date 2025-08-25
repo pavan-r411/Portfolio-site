@@ -23,7 +23,7 @@ export type Project = {
 
 export const profile = {
   name: 'Pavan Kumar Ramesh',
-  tagline: 'Student Software Developer',
+  tagline: 'Student',
   location: 'Los Angeles, CA',
   email: 'pkumar@usc.edu',
   phone: '(213) 574-6746',
