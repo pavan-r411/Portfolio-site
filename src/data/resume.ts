@@ -37,15 +37,19 @@ export const education: Education[] = [
     location: 'Los Angeles, CA',
     dateRange: 'Jan 2025 – Dec 2026',
     details: [
-      'Relevant coursework: Web technologies, Machine Learning, Database Systems',
+      'Relevant coursework: CSCI 570:Web-technologies, DSCI-552:Machine Learning, CSCI-585:Database Systems',
       'GPA: 4.0/4.0',
     ],
   },
   {
     school: 'University of Visvesvaraya College of Engineering',
-    degree: 'Bachelor of Engineering in Computer Science',
+    degree: 'Bachelors in Computer Science',
     location: 'Bengaluru, KA',
     dateRange: 'Aug 2017 – Jul 2021',
+    details: [
+      'Relevant coursework: Data Sctructures & Algorithms, Operating Systems , Computer Networks',
+      'GPA: 8.3/10',
+    ]
   },
 ];
 
