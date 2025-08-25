@@ -12,14 +12,64 @@
 #root { max-width: 1400px; margin: 0 auto; padding: 0 1rem 4rem; background: var(--bg); background-attachment: fixed; }
 
 .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  position: sticky; top: 0; z-index: 20;
   background: var(--bg);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
   padding: 1rem 2rem 1rem 1rem;
+}
+
+/* Desktop nav default */
+.nav { display: flex; align-items: center; gap: 1.25rem; }
+.nav a { color: var(--muted); }
+.nav a:hover { color: var(--text); }
+
+/* Hamburger (hidden on desktop) */
+.menu-btn {
+  display: none;
+  background: transparent; border: 0; padding: .25rem; margin-left: auto; cursor: pointer;
+}
+.menu-bar {
+  display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: transform .2s ease, opacity .2s ease;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 820px) {
+  .menu-btn { display: inline-block; }
+
+  /* Mobile menu panel (overlay) */
+  .nav {
+    position: fixed; inset: 64px 0 0 0; /* below the header */
+    display: grid; gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(10,12,18,.88);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border);
+    transform: translateY(-8px);
+    opacity: 0; pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1; pointer-events: auto;
+  }
+
+  /* Make links larger & tappable */
+  .nav a {
+    font-size: 1.05rem;
+    padding: .75rem .25rem;
+    border-radius: .5rem;
+  }
+  .nav a:active { background: rgba(255,255,255,.06); }
+
+  /* Hide desktop inline nav gap */
+  .topbar .nav:not(.open) { display: none; }
+}
+
+/* Optional: animate hamburger into X */
+@media (max-width: 820px) {
+  .menu-btn[aria-expanded="true"] .menu-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-btn[aria-expanded="true"] .menu-bar:nth-child(2) { opacity: 0; }
+  .menu-btn[aria-expanded="true"] .menu-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 }
 
 .brand { font-weight: 800; background: var(--grad-1); -webkit-background-clip: text; background-clip: text; color: transparent; }
