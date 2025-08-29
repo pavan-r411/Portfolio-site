@@ -1,3 +1,9 @@
+.topbar .brand {
+  color: #14b8a6 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+}
 :root {
   --bg: radial-gradient(1000px 600px at 10% 10%, #0f766e 0%, transparent 60%), radial-gradient(900px 600px at 90% 20%, #134e4a 0%, transparent 60%), #0b0d12;
   --panel: rgba(18,22,32,.75);
